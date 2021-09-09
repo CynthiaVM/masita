@@ -1,3 +1,10 @@
 from django.contrib import admin
+from django.db import models
+from .models import Dessert
 
-# Register your models here.
+class coreAdmin (admin.modelAdmin):
+    readonly_fields= ("created","updated")
+
+admin.site.register(Dessert, coreAdmin)
+
+
