@@ -1,18 +1,17 @@
-from django.db import models
-from django.db.models.fields.related import create_many_to_many_intermediary_model
+from django.db.models import Model, CharField, TextField, DateTimeField, ImageField
 
-class Muffing(models.Model):
-    title= models.CharField(max_length=540)
-    description= models.TextField()
-    image= models.ImageField(upload_to= "muffin")
-    create= models.DateField(auto_now_add=True, verbose_name="fecha de crecion")
-    create= models.DateTimeField(auto_now=True, verbose_name="fecha de modificacion")
+class Dessert(Model):
+    title= CharField(max_length=540, verbose_name="Titulo")
+    description=TextField(verbose_name= "Descripcion")
+    image=ImageField(upload_to= "Dessert")
+    create= DateTimeField(auto_now_add=True)
+    create= DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name= "Panquesito"
-        verbose_name= "Panquesitos" 
+        verbose_name= "Postre"
+        verbose_name= "Postres" 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
 

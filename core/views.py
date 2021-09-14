@@ -1,6 +1,8 @@
-from django.http import response
 from django.shortcuts import render
+from .models import Dessert
+
 
 def home(request):
-    return render(request ,"core/index.html")
+    prostrecitos = Dessert.objects.all()
+    return render(request ,"core/index.html", {"postres": prostrecitos})
 

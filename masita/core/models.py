@@ -1,13 +1,11 @@
-from django.db import models, charfield
-from django.db.models.base import Model
-from django.db.models.fields import CharField, TextField
- 
+from django.db.models import Model, CharField, TextField, DateTimeField, ImageField
+
 class Dessert(Model):
-    title= CharField (max_length=540, verbose_name= "Titulo")
+    title= CharField (max_length=50, verbose_name= "Titulo")
     description= TextField(verbose_name= "Descripcion")
-    image= models.ImageField(upload_to= "dessert")
-    create= models.DateField(auto_now_add=True)
-    create= models.DateTimeField(auto_now=True)
+    image= ImageField(upload_to= "dessert")
+    create= DateTimeField(auto_now_add=True)
+    create= DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name= "Postre"
