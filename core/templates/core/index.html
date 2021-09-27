@@ -10,11 +10,10 @@
   </head>
   <body>
     <div class="container">
-  <header>
-    <div class="bg-dark text-center py-4">
-    <a href="#" class="bg-danger text-dark text-decoration-none lead p-2">CUPCKAKE CYN</a>
-    </div>
-  </header>
+    {% if request.path != '/' %}
+      {% include "core/header.html" %}
+    {% endif %}
+
     <div class="bg-danger bg-gradient text-center py-5">
     <h1 class="display-4 lead pt-5">CUPCKAKE CYN</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia quisquam, debitis itaque tenetur omnis?</p>

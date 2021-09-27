@@ -6,7 +6,7 @@ from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.home, name="home"),
+    path("masita", views.home, name="home"),
 ]
 if settings.DEBUG:
    from django.conf.urls.static import static
